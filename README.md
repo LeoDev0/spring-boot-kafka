@@ -14,10 +14,15 @@ $ docker exec -it kafka bash
 $ ./opt/bitnami/kafka/bin/kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic Kafka_Example
 ```
 
-### Create consumer
+### Instantiate console consumer
 
 ```bash
 $ ./opt/bitnami/kafka/bin/kafka-console-consumer.sh --bootstrap-server kafka:9092 --topic Kafka_Example --from-beginning
+```
+
+### Instantiate console producer (so you can produce messages via console)
+```bash
+$ ./opt/bitnami/kafka/bin/kafka-console-producer.sh --broker-list kafka:9092 --topic Kafka_Example
 ```
 
 ### List Topics
@@ -25,5 +30,5 @@ $ ./opt/bitnami/kafka/bin/kafka-console-consumer.sh --bootstrap-server kafka:909
 $ ./opt/bitnami/kafka/bin/kafka-topics.sh --list --zookeeper zookeeper:2181
 ```
 
-### Send message
+### Send message via API
 `GET - localhost:8081/kafka/publish/{message}`
