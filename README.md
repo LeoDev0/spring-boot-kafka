@@ -1,4 +1,4 @@
-### Build kafka and zookeeper docker images
+### Build kafka and zookeeper docker containers with docker compose
 ```bash
 $ docker-compose up
 ```
